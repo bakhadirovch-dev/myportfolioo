@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karimov Otabek Baxadirovich | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
         html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -23,7 +24,7 @@
 
         section { min-height: 100vh; padding: 100px 5% 40px 5%; display: flex; flex-direction: column; justify-content: center; }
 
-        /* MOBILGA MOSLASHUVCHAN HERO */
+        /* HERO SECTION */
         .hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 30px; }
         
         @media (min-width: 992px) {
@@ -40,7 +41,7 @@
         
         .hero-status { font-size: 15px; font-weight: 700; color: #fca311; margin-bottom: 20px; display: block; }
         
-        /* YANGILIK BLOKI */
+        /* LIVE STATUS */
         .live-status {
             background: rgba(252, 163, 17, 0.1); border: 1px solid #fca311;
             padding: 10px 15px; border-radius: 8px; font-size: 13px; display: inline-flex;
@@ -49,16 +50,32 @@
         .dot { width: 8px; height: 8px; background: #fca311; border-radius: 50%; animation: blink 1s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        .hero-image { 
-            width: 260px; height: 340px; border-radius: 20px;
-            background-image: url('image_27.png'); background-size: cover; background-position: center;
-            border: 3px solid #fca311; box-shadow: 0 0 20px rgba(252, 163, 17, 0.2);
-            order: -1; /* Telefonda rasm tepadaroq chiqadi */
+        /* BO'SH JOY - ENDI BU YERGA PROGRESS BARLAR QO'SHILDI */
+        .skills-container { 
+            width: 280px; height: 380px; border-radius: 20px;
+            background-color: rgba(13, 22, 45, 0.5); /* Semi-transparent background */
+            border: 3px solid #fca311; box-shadow: 0 0 20px rgba(252, 163, 17, 0.3);
+            order: -1; padding: 20px; display: flex; flex-direction: column; justify-content: space-evenly;
+            backdrop-filter: blur(10px);
         }
 
         @media (min-width: 992px) {
-            .hero-image { width: 380px; height: 500px; order: 1; }
+            .skills-container { width: 380px; height: 500px; order: 1; padding: 30px; }
         }
+
+        /* PROGRESS BAR STILI */
+        .skill-block { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+        .skill-name { font-size: 13px; font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
+        .skill-name i { font-size: 16px; color: #fca311; }
+        
+        @media (min-width: 992px) {
+            .skill-name { font-size: 15px; }
+            .skill-name i { font-size: 18px; }
+        }
+
+        .progress-bar { width: 100%; height: 10px; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; position: relative; }
+        .progress-fill { height: 100%; background-color: #fca311; border-radius: 10px; width: 0%; transition: width 0.5s ease; /* Statik animatsiya uchun, lekin Anime.js ishlatsa bu o'chadi */ }
+        .skill-percentage { font-size: 12px; font-weight: 900; color: #cbd5e0; margin-left: auto; display: inline-block; }
 
         /* BO'LIMLAR */
         .edu-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
@@ -86,13 +103,55 @@
 
     <section id="home">
         <div class="hero">
-            <div class="hero-image"></div>
+            <div class="skills-container">
+                
+                <div class="skill-block" data-skill="90" data-label="Видео Тахрир (High)">
+                    <h4 class="skill-name"><i class="fas fa-video"></i> Видео Тахрир</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <span class="skill-percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="skill-block" data-skill="95" data-label="Bot Development (High)">
+                    <h4 class="skill-name"><i class="fas fa-robot"></i> Bot Development</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <span class="skill-percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="skill-block" data-skill="85" data-label="AI билан ишлаш (High)">
+                    <h4 class="skill-name"><i class="fas fa-brain"></i> AI билан ишлаш</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <span class="skill-percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="skill-block" data-skill="60" data-label="C++ Дастурлаш (Mid)">
+                    <h4 class="skill-name"><i class="fas fa-code"></i> C++ Дастурлаш</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <span class="skill-percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="skill-block" data-skill="50" data-label="Инглиз тили (Low)">
+                    <h4 class="skill-name"><i class="fas fa-language"></i> Инглиз тили</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <span class="skill-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-content">
                 <div class="live-status"><div class="dot"></div> Hozirda: TATUda 2-semestr imtihonlariga tayyorgarlik</div>
                 <h1 class="full-name-title">Karimov <br> <span>Otabek</span> <br> Baxadirovich</h1>
                 <span class="hero-status">Software Developer & IT Creator bo'yicha boshlang'ich mutaxassisman</span>
                 <p style="font-size: 15px; color: #94a3b8; margin-bottom: 30px;">
-                    C++ dasturlash va Telegram botlar yaratish orqali raqamli dunyoda o'z o'rnimni topyapman.
+                    C++ va Telegram botlar orqali foydali yechimlar yaratuvchi. Videotahrir va AI integratsiyasida kuchli amaliyotga ega.
                 </p>
                 <a href="#education" style="padding: 15px 30px; background: #fca311; color: #050a18; text-decoration: none; border-radius: 8px; font-weight: 900; text-transform: uppercase; font-size: 14px;">Ma'lumotlar</a>
             </div>
@@ -110,12 +169,12 @@
             <div class="edu-card">
                 <i class="fas fa-terminal" style="color:#fca311; margin-bottom:15px;"></i>
                 <h3>C++ Algoritmlar</h3>
-                <p>Murakkab mantiqiy masalalar va ma'lumotlar tuzilmasi bilan ishlash.</p>
+                <p>Murakkab mantiqiy masalalar va ma'lumotlar tuzilmasi bilan ishlash tajribasi.</p>
             </div>
             <div class="edu-card">
                 <i class="fas fa-code" style="color:#fca311; margin-bottom:15px;"></i>
                 <h3>Bot Development</h3>
-                <p>Telegram platformasi uchun foydali va qulay botlar loyihalash.</p>
+                <p>Telegram platformasi uchun foydali, qulay va integratsiyali botlar loyihalash.</p>
             </div>
         </div>
     </section>
@@ -142,5 +201,47 @@
         </div>
     </section>
 
+    <script>
+        // Sayt yuklangandan keyin animatsiyani ishga tushirish
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Barcha .progress-fill elementlarini tanlash
+            const fills = document.querySelectorAll('.progress-fill');
+            // Barcha .skill-percentage elementlarini tanlash
+            const percentages = document.querySelectorAll('.skill-percentage');
+
+            // Progress barlarning to'lish animatsiyasi
+            anime({
+                targets: '.progress-fill', // Animatsiya nishoni
+                width: function(el) {
+                    // Xar bir elementning o'z .skill-block ota-onasidan data-skill qiymatini olish
+                    return el.closest('.skill-block').getAttribute('data-skill') + '%';
+                },
+                easing: 'easeInOutExpo', // Silliq va chiroyli animatsiya turi
+                duration: 2500, // Davomiyligi (ms)
+                delay: anime.stagger(200), // Ketma-ket miltillab chiqish delay-i
+                loop: false, // Faqat bir marta
+                autoplay: true // Sayt yuklanganda srazi boshlash
+            });
+
+            // Foizlarning 0 dan final qiymatgacha sanash animatsiyasi
+            percentages.forEach(percentEl => {
+                const targetPercentage = percentEl.closest('.skill-block').getAttribute('data-skill');
+                
+                anime({
+                    targets: percentEl, // Foiz matni nishoni
+                    innerHTML: [0, targetPercentage], // 0 dan targetPercentage foizgacha
+                    round: 1, // Butun sonlarga yaxlitlash
+                    easing: 'linear', // Tekis sanash
+                    duration: 2500, // Barlar to'lishi bilan bir xil davomiylik
+                    delay: 0, // Delay kerak emas, barlar bilan parallel ketadi
+                    update: function(a) {
+                        // Sanash jarayonida oxiriga "%" belgisini qo'shib borish
+                        percentEl.innerHTML = percentEl.innerHTML + '%';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
