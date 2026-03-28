@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karimov Otabek Baxadirovich | Portfolio</title>
+    <title>Karimov Otabek Baxadirovich | Digital Identity</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
@@ -18,7 +18,16 @@
             border-bottom: 1px solid #fca311;
         }
 
-        .name-brand { font-size: 16px; font-weight: 900; color: #fca311; text-transform: uppercase; }
+        /* TEPADAGI LOGO VA DIGITAL IDENTITY YOG'DUSI */
+        .name-brand { 
+            font-size: 16px; font-weight: 900; color: #fca311; text-transform: uppercase; 
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+        }
+        .digital-identity { 
+            color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: capitalize; 
+            letter-spacing: 1px; border-left: 1px solid rgba(252, 163, 17, 0.5); padding-left: 8px; 
+        }
+
         .nav-links { list-style: none; display: flex; gap: 12px; }
         .nav-links a { color: #ffffff; text-decoration: none; font-size: 12px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: #fca311; }
@@ -30,6 +39,7 @@
         @media (min-width: 992px) {
             .hero { flex-direction: row; text-align: left; padding: 0 10%; gap: 60px; }
             .name-brand { font-size: 22px; }
+            .digital-identity { font-size: 13px; }
             .nav-links { gap: 30px; }
             .nav-links a { font-size: 15px; }
         }
@@ -84,168 +94,7 @@
         @media (min-width: 768px) { .edu-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .edu-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        .edu-card { background: #0d162d; padding: 30px; border-radius: 15px; border-top: 4px solid #fca311; transition: 0.3s; }
+        .edu-card { background: #0d162d; padding: 30px; border-radius: 15px; border-top: 4px solid #fca311; transition: 0.3s; height: 100%; }
         .edu-card:hover { transform: translateY(-5px); background: #14213d; }
         .edu-card h3 { font-size: 20px; margin-bottom: 15px; color: #ffffff; }
-        .edu-card p { font-size: 15px; color: #94a3b8; line-height: 1.7; }
-
-        .project-box { background: #0d162d; padding: 30px; border-radius: 20px; border: 1px solid rgba(252,163,17,0.3); width: 100%; max-width: 600px; margin: 0 auto; text-align: center; }
-
-        .contact-list { max-width: 400px; margin: 30px auto; display: flex; flex-direction: column; gap: 12px; }
-        .contact-item { padding: 15px; border-radius: 10px; text-decoration: none; color: white; background: #15203b; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
-        .contact-item:hover { border-color: #fca311; transform: scale(1.02); }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="name-brand">Karimov Otabek</div>
-        <ul class="nav-links">
-            <li><a href="#home">Asosiy</a></li>
-            <li><a href="#education">Ta'lim</a></li>
-            <li><a href="#projects">Loyihalar</a></li>
-            <li><a href="#contact">Aloqa</a></li>
-        </ul>
-    </header>
-
-    <section id="home">
-        <div class="hero">
-            
-            <div class="skills-container">
-                <h3 class="skills-title">Skillset</h3>
-                
-                <div class="skill-block" data-skill="95">
-                    <h4 class="skill-name"><i class="fas fa-robot"></i> Bot Development</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                        <span class="skill-percentage">0%</span>
-                    </div>
-                </div>
-
-                <div class="skill-block" data-skill="90">
-                    <h4 class="skill-name"><i class="fas fa-video"></i> Video Tahrir</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                        <span class="skill-percentage">0%</span>
-                    </div>
-                </div>
-
-                <div class="skill-block" data-skill="85">
-                    <h4 class="skill-name"><i class="fas fa-brain"></i> AI bilan ishlash</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                        <span class="skill-percentage">0%</span>
-                    </div>
-                </div>
-
-                <div class="skill-block" data-skill="60">
-                    <h4 class="skill-name"><i class="fas fa-code"></i> C++ Dasturlash</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                        <span class="skill-percentage">0%</span>
-                    </div>
-                </div>
-
-                <div class="skill-block" data-skill="50">
-                    <h4 class="skill-name"><i class="fas fa-language"></i> Ingliz tili</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
-                        <span class="skill-percentage">0%</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-content">
-                <div class="live-status"><div class="dot"></div> Hozirda: TATUda 2-semestr imtihonlariga tayyorgarlik</div>
-                <h1 class="full-name-title">Karimov <br> <span>Otabek</span> <br> Baxadirovich</h1>
-                <span class="hero-status">Software Developer & IT Creator bo'yicha boshlang'ich mutaxassisman</span>
-                <p style="font-size: 15px; color: #94a3b8; margin-bottom: 30px;">
-                    C++ va Telegram botlar orqali xavfsiz hamda foydali yechimlar yaratuvchi. Videotahrir va AI integratsiyasida kuchli amaliyotga ega Kiberxavfsizlik talabasi.
-                </p>
-                <a href="#education" style="padding: 15px 30px; background: #fca311; color: #050a18; text-decoration: none; border-radius: 8px; font-weight: 900; text-transform: uppercase; font-size: 14px;">Ma'lumotlar</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" style="background: #081024;">
-        <h2 style="font-size: 26px; text-align: center; margin-bottom: 30px;">Ta'lim va <span style="color: #fca311;">Bilim</span></h2>
-        <div class="edu-grid">
-            
-            <div class="edu-card">
-                <i class="fas fa-shield-alt" style="color:#fca311; margin-bottom:15px; font-size: 32px;"></i>
-                <h3>TATU | Kiberxavfsizlik</h3>
-                <p>Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari universiteti, <strong>Kiberxavfsizlik</strong> fakulteti, <strong>736-25</strong> guruh talabasiman.</p>
-            </div>
-            
-            <div class="edu-card">
-                <i class="fas fa-terminal" style="color:#fca311; margin-bottom:15px; font-size: 32px;"></i>
-                <h3>C++ Algoritmlar</h3>
-                <p>Murakkab mantiqiy masalalar va ma'lumotlar tuzilmasi bilan ishlash tajribasi. Algoritmik fikrlash ustida doimiy amaliyotlar.</p>
-            </div>
-            
-            <div class="edu-card">
-                <i class="fas fa-user-secret" style="color:#fca311; margin-bottom:15px; font-size: 32px;"></i>
-                <h3>Bot Development</h3>
-                <p>Telegram platformasi uchun ishonchli, foydali va tezkor integratsiyali botlar loyihalash hamda ularni serverga yuklash.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="project-box">
-            <h3 style="color:#fca311; margin-bottom:15px;">Mening Loyihalarim</h3>
-            <p style="margin-bottom:20px;">Barcha amaliy ishlarim va kodlarim Telegram kanalimda jamlangan.</p>
-            <a href="https://t.me/boshqacha_edii" target="_blank" style="padding: 12px 25px; background: #0088cc; color: white; text-decoration: none; border-radius: 10px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px;">
-                <i class="fab fa-telegram-plane"></i> Kanalga o'tish
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" style="background: #081024;">
-        <h2 style="font-size: 26px; text-align: center; margin-bottom: 30px; color: #fca311;">Bog'lanish</h2>
-        <div class="contact-list">
-            <a href="https://www.instagram.com/_bakhadirovch" target="_blank" class="contact-item">
-                <i class="fab fa-instagram" style="color: #E1306C; font-size: 20px;"></i> Instagram Profil
-            </a>
-            <a href="https://t.me/muwahhid_27" target="_blank" class="contact-item">
-                <i class="fab fa-telegram-plane" style="color: #0088cc; font-size: 20px;"></i> Telegram (Lichka)
-            </a>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Barlar to'lishi
-            anime({
-                targets: '.progress-fill',
-                width: function(el) {
-                    return el.closest('.skill-block').getAttribute('data-skill') + '%';
-                },
-                easing: 'easeInOutExpo',
-                duration: 2000,
-                delay: anime.stagger(150)
-            });
-
-            // Raqamlar sanalishi
-            const percentages = document.querySelectorAll('.skill-percentage');
-            percentages.forEach(percentEl => {
-                const targetPercentage = parseInt(percentEl.closest('.skill-block').getAttribute('data-skill'));
-                let counter = { val: 0 };
-                
-                anime({
-                    targets: counter,
-                    val: targetPercentage,
-                    round: 1,
-                    easing: 'easeOutExpo',
-                    duration: 2000,
-                    update: function() {
-                        percentEl.innerHTML = counter.val + '%';
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        .edu-card p { font-size: 15px; color: #9
